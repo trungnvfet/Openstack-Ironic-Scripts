@@ -72,8 +72,17 @@ export IMAGE_ID=$(glance image-list | grep 'uec' | awk '{ print $2 }' | head -n1
 
 echo "==============Let's run following command 'nova boot --nic net-id=$NET_ID --flavor baremetal --image $IMAGE_ID $NODE_NAME'==============="
 
+echo "Mapping cell and install python-scciclient"
+
+nova-manage cell_v2 simple_cell_setup
+wait
+sudo pip install "python-scciclient>=0.5.0" pysnmp
+wait
+
 echo "FINISH===========FINISH====================FINISH==================FINISH=======================FINISH"
 
-echo "CHECKING AGAIN"
+echo "CHECKING AGAIN `nova hypervisor-stats` "
 nova hypervisor-stats
 
+echo "CHECKING `openstack baremetal node list` and `openstack baremetal node show bm` for bios is wait "
+echo "Need to run `ironic node-update $NODE add properties/capabilities='boot_mode:bios'` again"
