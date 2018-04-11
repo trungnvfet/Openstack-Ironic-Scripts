@@ -1,21 +1,19 @@
-# F_ironic_bm_script
-Implement BM nodes and Instance Nova
+# HOW TO AUTO-CREATE RAID CONFIGURATION VIA iRMC DRIVER
 
-Lets run ``source instance_node_create.sh`` along with some following commande.
+Note::
 
-``$ source /etc/environment``
+   - Check MacAddress on Bare Metal Server then put value into
+     ``export BM_MAC = `` in _auto_raid_cfg.sh
+   - Change raid paras in ``tartget_raid_cfg.json`` based on
+     ``sample_tartget_raid_config.rst``
+   - If you only want to delete node in Ironic then run ``source _delete_node_bm``
 
-** Delete `clean wait` node:
+Lets run ``source _auto_raid_cfg.sh`` to auto create raid cofiguration.
 
-- Running script to change `clean wait` into `manageble`
+Take a coffee cup & relax!!!
 
-``$ source bm_node_delete.sh``
+Youtube demo link:
 
-- Delete current instance via dashboard/cli
-- Delete current node via cli
+``https://www.youtube.com/playlist?list=PLVMnqzl_peRHMYOAsHgukIYKqDs3fdi8-``
 
-``$ openstack baremetal node delete $NODE
-
-** Create BM node:
-
-``source instance_node_create.sh``
+Thanks very much!!!
