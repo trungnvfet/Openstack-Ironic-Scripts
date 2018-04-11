@@ -26,7 +26,7 @@
 		"size_gb": 1000,
 		"raid_level": "0"
 	      },
-{
+	      {
 		"size_gb": 1000,
 		"raid_level": "1"
 	      }
