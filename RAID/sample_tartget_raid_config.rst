@@ -14,7 +14,7 @@
 	    ]
 	}
 
-# Sample 1: Auto create without physical_disks and 1 array. Let change raid_level = 0 or 5 or 6 or 10 or 50 or 60 for each case.
+# Sample 2: Auto create without physical_disks and 1 array. Let change raid_level = 0 or 5 or 6 or 10 or 50 or 60 for each case.
 
 .. code_block:: init
 
